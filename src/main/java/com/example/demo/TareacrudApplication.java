@@ -15,10 +15,10 @@ public class TareacrudApplication {
         System.out.println("Klk");
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String sayKlk()
     {
-        return "Klk Jean";
+        return "Hola Jean";
 
     }
 

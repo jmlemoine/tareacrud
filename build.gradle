@@ -16,6 +16,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'com.h2database:h2:1.4.197'
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'org.hibernate:hibernate-entitymanager:5.1.0.Final'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
