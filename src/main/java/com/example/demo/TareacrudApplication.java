@@ -15,11 +15,11 @@ public class TareacrudApplication {
         System.out.println("Klk");
     }
 
-    @RequestMapping("/")
+    /*@RequestMapping("/")
     public String sayKlk()
     {
-        return "Hola Jean";
+        return "Práctica Hecha Por Roselin Sosa y Jean Lemoine";
 
-    }
+    }*/
 
 }
