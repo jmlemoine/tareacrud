@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Estudiante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int matricula;
     private String nombre;
     private String apellido;
