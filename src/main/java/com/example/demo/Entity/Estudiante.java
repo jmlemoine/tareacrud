@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Estudiante {
 
     @Id
+    @Column(name = "usuarioID")
     private int matricula;
     private String nombre;
     private String apellido;
