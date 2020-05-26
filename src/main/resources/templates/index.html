@@ -9,6 +9,7 @@
     <form th:action="@{/crearEstudiante}" th:object="${estudiante}" method="POST">
         <input type="text" placeholder="Matrícula" th:field="${estudiante.matricula}"/>
         <input type="text" placeholder="Nombre" th:field="${estudiante.nombre}"/>
+        <input type="text" placeholder="Apellido" th:field="${estudiante.apellido}"/>
         <input type="text" placeholder="Teléfono" th:field="${estudiante.telefono}"/>
         <input type="Submit" th:value="'Crear Estudiante'"/>
     </form>
@@ -17,16 +18,16 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Matrícula</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Teléfono</th>
             </tr>
         </thead>
         <tbody>
         <tr th:each="estudiante : ${estudiantes}">
-            <td th:text="${estudiante.id}"></td>
             <td th:text="${estudiante.matricula}"></td>
             <td th:text="${estudiante.nombre}"></td>
+            <td th:text="${estudiante.apellido}"></td>
             <td th:text="${estudiante.telefono}"></td>
         </tr>
         </tbody>
