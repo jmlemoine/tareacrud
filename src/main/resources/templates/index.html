@@ -1,5 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Estudiantes</title>
+    </head>
+
+    <form th:action="@{/crearEstudiante}" th:object="${estudiante}" method="POST">
+        <input type="number" placeholder="Matrícula" th:field="${estudiante.matricula}"/>
+        <input type="text" placeholder="Nombre" th:field="${estudiante.nombre}"/>
+        <input type="text" placeholder="Apellido" th:field="${estudiante.apellido}"/>
+        <input type="text" placeholder="Teléfono" th:field="${estudiante.telefono}"/>
+        <input type="submit" th:value="'Crear Estudiante'">
+    </form>
+    <br>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estudiante : ${estudiantes}">
+                    <td th:text="${estudiante.matricula}"></td>
+                    <td th:text="${estudiante.nombre}"></td>
+                    <td th:text="${estudiante.apellido}"></td>
+                    <td th:text="${estudiante.telefono}"></td>
+                    <td><a th:href="$@{'/editarEstudiante/' + '${estudiante.matricula}'}"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Estudiantes</title>
@@ -33,4 +76,4 @@
         </tbody>
     </table>
 </body>
-</html>
+</html>-->

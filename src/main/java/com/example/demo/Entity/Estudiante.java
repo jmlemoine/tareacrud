@@ -3,11 +3,11 @@ package com.example.demo.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "t_estudiante")
+@Table(name = "tEstudiante")
 public class Estudiante {
 
     @Id
-    @Column(name = "usuarioID")
+    @Column(name = "matricula")
     private int matricula;
     private String nombre;
     private String apellido;
