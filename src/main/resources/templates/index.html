@@ -22,7 +22,7 @@
                     <th>Apellido</th>
                     <th>Teléfono</th>
                     <th>Editar</th>
-                    <th>Eliminar</th>
+                    <!--<th>Eliminar</th>-->
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +31,7 @@
                     <td th:text="${estudiante.nombre}"></td>
                     <td th:text="${estudiante.apellido}"></td>
                     <td th:text="${estudiante.telefono}"></td>
-                    <td><a th:href="$@{'/editarEstudiante/' + '${estudiante.matricula}'}"></a></td>
+                    <td><a th:href="@{'/editarEstudiante/' + ${estudiante.matricula}}">Editar</a></td>
                 </tr>
             </tbody>
         </table>
