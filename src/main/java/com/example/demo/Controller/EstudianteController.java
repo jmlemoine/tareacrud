@@ -34,9 +34,18 @@ public class EstudianteController {
 
     @GetMapping("/editarEstudiante/{matricula}")
     public String editarEstudianteForm(Model modelo, @PathVariable(name = "matricula") int matricula){
-        Estudiante estudianteEditar = repositorio.findById(Long.valueOf(matricula)).get();
+        Estudiante estudianteEditar = repositorio.findById(Integer.valueOf(matricula)).get();
         modelo.addAttribute("estudiante", estudianteEditar);
         modelo.addAttribute("estudiantes", repositorio.findAll());//SELECT * FROM tEstudiante
+        return "index";
+    }
+
+    @GetMapping("/eliminarEstudiante/{id}")
+    public String eliminarUsuario(Model modelo, @PathVariable(name = "matricula") int matricula){
+        Estudiante estudianteEliminar = repositorio.findById(Integer.valueOf(matricula)).get();
+        repositorio.delete(estudianteEliminar);
+        modelo.addAttribute("estudiante", new Estudiante());
+        modelo.addAttribute("estudiantes", repositorio.findAll());
         return "index";
     }
 

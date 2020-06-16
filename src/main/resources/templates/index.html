@@ -6,11 +6,12 @@
     </head>
 
     <form th:action="@{/crearEstudiante}" th:object="${estudiante}" method="POST">
-        <input type="number" placeholder="Matrícula" th:field="${estudiante.matricula}"/>
+        <span th:if="${estudiante.matricula != null}"><input type="number" placeholder="Matrícula" th:field="${estudiante.matricula}"></span>
+        <!--<input type="number" placeholder="Matrícula" th:field="${estudiante.matricula}"/>-->
         <input type="text" placeholder="Nombre" th:field="${estudiante.nombre}"/>
         <input type="text" placeholder="Apellido" th:field="${estudiante.apellido}"/>
         <input type="text" placeholder="Teléfono" th:field="${estudiante.telefono}"/>
-        <input type="submit" th:value="'Crear Estudiante'">
+        <input type="submit" th:value="${estudiante.matricula != null} ? 'Guardar Estudiante' : 'Crear Estudiante'">
     </form>
     <br>
     <body>
@@ -21,7 +22,7 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Teléfono</th>
-                    <th>Editar</th>
+                    <th>Acciones</th>
                     <!--<th>Eliminar</th>-->
                 </tr>
             </thead>
@@ -31,7 +32,8 @@
                     <td th:text="${estudiante.nombre}"></td>
                     <td th:text="${estudiante.apellido}"></td>
                     <td th:text="${estudiante.telefono}"></td>
-                    <td><a th:href="@{'/editarEstudiante/' + ${estudiante.matricula}}">Editar</a></td>
+                    <td><a th:href="@{'/editarEstudiante/' + ${estudiante.matricula}}"> Editar </a> | <a th:href="@{'/eliminarEstudiante/' + ${estudiante.matricula}}"> Eliminar </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

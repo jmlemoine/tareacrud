@@ -5,5 +5,8 @@ package com.example.demo.Repository;
 import com.example.demo.Entity.Estudiante;
 import org.springframework.data.repository.CrudRepository;
 
-public interface EstudianteRepositorio extends CrudRepository<Estudiante, Long> {
+import java.util.List;
+
+public interface EstudianteRepositorio extends CrudRepository<Estudiante, Integer> {
+
 }
