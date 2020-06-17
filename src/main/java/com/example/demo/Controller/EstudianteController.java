@@ -41,7 +41,7 @@ public class EstudianteController {
     }
 
     @GetMapping("/eliminarEstudiante/{id}")
-    public String eliminarUsuario(Model modelo, @PathVariable(name = "matricula") int matricula){
+    public String eliminarUsuario(Model modelo, @PathVariable(name = "id") int matricula){
         Estudiante estudianteEliminar = repositorio.findById(Integer.valueOf(matricula)).get();
         repositorio.delete(estudianteEliminar);
         modelo.addAttribute("estudiante", new Estudiante());

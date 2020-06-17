@@ -32,7 +32,7 @@
                     <td th:text="${estudiante.nombre}"></td>
                     <td th:text="${estudiante.apellido}"></td>
                     <td th:text="${estudiante.telefono}"></td>
-                    <td><a th:href="@{'/editarEstudiante/' + ${estudiante.matricula}}"> Editar </a> | <a th:href="@{'/eliminarEstudiante/' + ${estudiante.matricula}}"> Eliminar </a>
+                    <td><a th:href="@{'/editarEstudiante/' + ${estudiante.matricula}}"> Editar </a> | <a th:href="@{'/eliminarEstudiante/' + ${estudiante.matricula}}"><!--<a href="#" th:href="@{/estudiantes/delete/{id}(id=${estudiante.matricula})}">--> Eliminar </a>
                     </td>
                 </tr>
             </tbody>
